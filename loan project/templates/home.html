@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LOGIN PAGE</title>
+    <!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body style="background-color: black;">
+    <header>
+      <div class="container">
+        <h1>
+          <p style="text-align: center; color:white;">Loan Approval Prediction System</p>
+        </h1>
+      </div>
+    </header>
+    <div class="ml-container">
+      <p style="text-align: center; color: white;">
+        Enter the 10 feature values in the cell below (in order):
+      </p>
+
+      <form action="{{ url_for('predict')}}" method="POST">
+        <!-- <input type="text" name="comment"/> -->
+        <div class="justify"> 
+          <textarea name="message" rows="8" cols="50"></textarea>
+        </div>
+        <br/>
+
+        <input type="submit" class="btn-info" value="check your loan approval" />
+      </form>
+    </div>
+    <br>
+  </body>
+</html>
